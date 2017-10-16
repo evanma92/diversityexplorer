@@ -55,7 +55,7 @@ ROOT_URLCONF = 'diversityexplorer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['<workspace>/diversityexplorer/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
