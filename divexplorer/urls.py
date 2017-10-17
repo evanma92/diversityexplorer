@@ -1,4 +1,5 @@
 from django.conf.urls import url
+
 from divexplorer import views
 
 urlpatterns = [
