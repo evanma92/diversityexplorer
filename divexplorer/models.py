@@ -28,10 +28,14 @@ class Simulation(models.Model):
     div_type = models.CharField(max_length=10, null=False)
     s3_url = models.CharField(max_length=256)
 
+    def __str__(self):
+        return self.sim_id
+
 
 class Parameters(models.Model):
     # Each simulation can have many sets of simulation parameters
     param_id = models.IntegerField(primary_key=True)
+    sim_id = models.ForeignKey(Simulation, related_name="Simulation", null=True, on_delete=models.CASCADE)
 
     lsp = models.IntegerField()
     plots = models.IntegerField()
@@ -47,8 +51,4 @@ class Parameters(models.Model):
     np_max = models.IntegerField()
     np_num = models.IntegerField()
     np_start = models.IntegerField()
-
-class Contains(models.Model):
-    param_id = models.ForeignKey(Parameters)
-    sim_id = models.ForeignKey(Simulation)
 
