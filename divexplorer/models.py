@@ -32,7 +32,7 @@ class Simulation(models.Model):
         return self.sim_id
 
 
-class Parameters(models.Model):
+class Parameter(models.Model):
     # Each simulation can have many sets of simulation parameters
     param_id = models.IntegerField(primary_key=True)
     sim_id = models.ForeignKey(Simulation, related_name="Simulation", null=True, on_delete=models.CASCADE)
