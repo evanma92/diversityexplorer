@@ -19,7 +19,7 @@ class User(models.Model):
 
 class Simulation(models.Model):
     email = models.ForeignKey(User)
-    sim_id = models.IntegerField(primary_key=True)
+    sim_id = models.PositiveIntegerField(primary_key=True)
     date = models.DateTimeField()
 
     # Each simulation has only one graph
@@ -28,27 +28,24 @@ class Simulation(models.Model):
     div_type = models.CharField(max_length=10, null=False)
     s3_url = models.CharField(max_length=256)
 
-    def __str__(self):
-        return self.sim_id
-
 
 class Parameter(models.Model):
     # Each simulation can have many sets of simulation parameters
-    param_id = models.IntegerField(primary_key=True)
+    param_id = models.PositiveIntegerField(primary_key=True)
     sim_id = models.ForeignKey(Simulation, related_name="Simulation", null=True, on_delete=models.CASCADE)
 
-    lsp = models.IntegerField()
-    plots = models.IntegerField()
+    lsp = models.PositiveIntegerField()
+    plots = models.PositiveIntegerField()
     pioneer = models.BooleanField()
     neutral = models.BooleanField()
 
     # for pioneers
-    p_max = models.IntegerField()
-    p_num = models.IntegerField()
-    p_start = models.IntegerField()
+    p_max = models.PositiveIntegerField()
+    p_num = models.PositiveIntegerField()
+    p_start = models.PositiveIntegerField()
 
     # for non-pioneers
-    np_max = models.IntegerField()
-    np_num = models.IntegerField()
-    np_start = models.IntegerField()
+    np_max = models.PositiveIntegerField()
+    np_num = models.PositiveIntegerField()
+    np_start = models.PositiveIntegerField()
 
