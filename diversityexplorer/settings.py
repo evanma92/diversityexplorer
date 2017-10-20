@@ -136,3 +136,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR, ]
+
+
+# Redirect after login
+LOGIN_REDIRECT_URL = 'home'
