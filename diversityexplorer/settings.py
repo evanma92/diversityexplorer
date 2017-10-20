@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'divexplorer',
-    'autofixture'
+    'autofixture',
+    'django_nose'
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'diversityexplorer.urls'
+
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Tell nose to measure coverage on the 'foo' and 'bar' apps
+NOSE_ARGS=[
+    '--with-coverage',
+    '--cover-package=divexplorer.models, divexplorer.views'
+]
+
 
 TEMPLATES = [
     {
