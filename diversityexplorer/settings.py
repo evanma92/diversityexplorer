@@ -139,4 +139,4 @@ STATICFILES_DIRS = [STATIC_DIR, ]
 
 
 # Redirect after login
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'index'
