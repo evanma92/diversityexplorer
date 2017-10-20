@@ -27,6 +27,9 @@ class Simulation(models.Model):
     hill_num = models.CharField(max_length = 3, null=False)
     div_type = models.CharField(max_length=10, null=False)
     s3_url = models.CharField(max_length=256)
+    
+    def __str__(self):
+        return str(self.sim_id)
 
 
 class Parameter(models.Model):
@@ -48,4 +51,6 @@ class Parameter(models.Model):
     np_max = models.PositiveIntegerField()
     np_num = models.PositiveIntegerField()
     np_start = models.PositiveIntegerField()
-
+    
+    def __str__(self):
+        return str(self.param_id)
