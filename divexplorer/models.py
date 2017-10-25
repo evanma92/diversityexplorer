@@ -2,23 +2,24 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
-
-class User(models.Model):
-    email = models.CharField(max_length=128, primary_key=True)
-    username = models.CharField(max_length=128, unique=True)
-    password = models.CharField(max_length=128, null=False)
-
-    def __str__(self):
-        """
-        Purpose: to debug / access the user
-        :return: The e-mail of the user
-        """
-        return self.email
+#
+# class User(models.Model):
+#     email = models.CharField(max_length=128, primary_key=True)
+#     username = models.CharField(max_length=128, unique=True)
+#     password = models.CharField(max_length=128, null=False)
+#
+#     def __str__(self):
+#         """
+#         Purpose: to debug / access the user
+#         :return: The e-mail of the user
+#         """
+#         return self.email
 
 class Simulation(models.Model):
-    email = models.ForeignKey(User)
+    email = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     sim_id = models.PositiveIntegerField(primary_key=True)
     date = models.DateTimeField()
 
