@@ -5,13 +5,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, get_user_model
+from divexplorer.forms import SignUpForm
 
 """
 - Each view exists as a series of individual functions.
 - Each view takes in at least one argument - A HttpRequest object: convention to name it "request"
 - Each view must return a HttpResponse object
 """
+
+User = get_user_model()
 
 def index(request):
     context_dict = {'boldmessage': "Working with Maurice and Michiel on the best capstone ever"}
@@ -33,7 +36,7 @@ def signup(request):
             login(request, user)
             return redirect('/divexplorer/')
     else:
-        form = UserCreationForm()
+        form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
 

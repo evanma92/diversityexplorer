@@ -140,3 +140,6 @@ STATICFILES_DIRS = [STATIC_DIR, ]
 
 # Redirect after login
 LOGIN_REDIRECT_URL = 'index'
+
+# To override default user model
+AUTH_USER_MODEL = 'divexplorer.MyUser'
