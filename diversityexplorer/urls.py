@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^divexplorer/', include('divexplorer.urls')),
 
     url(r'^login/$', auth_views.login, name='login'),
-    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+    url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^signup/$', views.signup, name='signup')
 
 ]
