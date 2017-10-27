@@ -142,4 +142,4 @@ STATICFILES_DIRS = [STATIC_DIR, ]
 LOGIN_REDIRECT_URL = 'index'
 
 # To override default user model
-AUTH_USER_MODEL = 'divexplorer.MyUser'
+# AUTH_USER_MODEL = 'divexplorer.MyUser'

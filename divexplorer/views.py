@@ -14,8 +14,6 @@ from divexplorer.forms import SignUpForm
 - Each view must return a HttpResponse object
 """
 
-User = get_user_model()
-
 def index(request):
     context_dict = {'boldmessage': "Working with Maurice and Michiel on the best capstone ever"}
 

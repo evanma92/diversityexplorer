@@ -7,12 +7,17 @@ from django.contrib.auth.models import AbstractBaseUser
 
 # Create your models here.
 
-class MyUser(AbstractBaseUser):
-    email = models.CharField(max_length=100, unique=True)
-    first_name = models.CharField(max_length=100, null=True)
-    last_name = models.CharField(max_length=100, null=True)
-    username = models.CharField(max_length=100, null=True   )
-    USERNAME_FIELD = 'email'
+class User(models.Model):
+    email = models.CharField(max_length=128, primary_key=True)
+    username = models.CharField(max_length=128, unique=True)
+    password = models.CharField(max_length=128, null=False)
+
+    def __str__(self):
+        """
+        Purpose: to debug / access the user
+        :return: The e-mail of the user
+        """
+        return self.email
 
 
 class Simulation(models.Model):
