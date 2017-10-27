@@ -1,11 +1,7 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load staticfiles %}
 
-<html>
-<head>
-    <title>Diversity Explorer</title>
-</head>
-<body>
+{% block content %}
     <h1>Welcome to Diversity Explorer</h1>
     <div>
         Welcome to my capstone <br />
@@ -15,5 +11,4 @@
         <a href='/divexplorer/about/'>About</a> <br />
     </div>
     <img src="{% static 'images/forest.jpeg' %}" alt="Picture of Forest" />
-</body>
-</html>
+{% endblock %}
