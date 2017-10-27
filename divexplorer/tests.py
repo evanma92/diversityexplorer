@@ -3,19 +3,15 @@ from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
 
 from django.test import TestCase
-from divexplorer.models import User, Simulation, Parameter
+from divexplorer.models import Simulation, Parameter
+from django.contrib.auth.models import User
 # Create your tests here.
 
-class UserMethodTests(TestCase):
-    
-    def test_string_representation(self):
-        user = User(email="evanma92@gmail.com", username = "evanma92", password = "123456")
-        self.assertEqual(str(user), user.email)
         
 class SimulationMethodTests(TestCase):
     
     def test_string_representation(self):
-        user = User(email="evanma92@gmail.com", username = "evanma92", password = "123456")
+        user = User.objects.create_user('evanma92', 'evanma92@gmail.com', 'whatever', first_name='Evan', last_name='Ma')
         simulation = Simulation(user, 1, "2017-10-18 00:00:00", "d0", "alpha", "")
         self.assertEqual(str(simulation), str(simulation.sim_id))
         
