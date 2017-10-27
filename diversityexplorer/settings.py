@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'diversityexplorer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'divexplorer_db',
+        'NAME': 'diversityexplorer_db',
         'USER': 'evanma',
         'PASSWORD': 'scrabble',
         'HOST': 'localhost',
@@ -142,4 +142,4 @@ STATICFILES_DIRS = [STATIC_DIR, ]
 LOGIN_REDIRECT_URL = 'index'
 
 # To override default user model
-# AUTH_USER_MODEL = 'divexplorer.MyUser'
+# AUTH_USER_MODEL = 'divexplorer.User'

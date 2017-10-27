@@ -11,17 +11,15 @@ from django.contrib.auth.models import User
 class SimulationMethodTests(TestCase):
     
     def test_string_representation(self):
-        user = User.objects.create_user('evanma92', 'evanma92@gmail.com', 'whatever', first_name='Evan', last_name='Ma')
-        simulation = Simulation(user, 1, "2017-10-18 00:00:00", "d0", "alpha", "")
-        self.assertEqual(str(simulation), str(simulation.sim_id))
+        simulation = Simulation(1, "2017-10-18 00:00:00", "d0", "alpha", "")
+        self.assertEqual(str(simulation), str(simulation.id))
         
 class ParameterMethodTests(TestCase):
     
     def test_string_representation(self):
-        user = User(email="evanma92@gmail.com", username = "evanma92", password = "123456")
-        simulation = Simulation(user, 1, "2017-10-18 00:00:00", "d0", "alpha", "")
+        simulation = Simulation(1, "2017-10-18 00:00:00", "d0", "alpha", "")
         parameter = Parameter(1, simulation, 1, 1, True, False, 1, 1, 1, 1, 1, 1)
-        self.assertEqual(str(parameter), str(parameter.param_id))
+        self.assertEqual(str(parameter), str(parameter.id))
         
 class ProjectTests(TestCase):
     
