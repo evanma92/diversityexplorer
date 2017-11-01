@@ -2,21 +2,69 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    {% load staticfiles %}
     <title>{% block title %}Diversity Explorer{% endblock %}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/heroic-features.css'%}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <h1>My Site</h1>
-      {% if user.is_authenticated %}
-        <a href="{% url 'logout' %}">logout</a>
-      {% else %}
-        <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
-      {% endif %}
-      <hr>
-    </header>
+     <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+          <a class="brand" href="#">Diversity Explorer</a>
+          <div class="container">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <span class='navbar-brand' >{{ user.get_username }}</span>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home
+                  </a>
+                </li>
+                <li class='nav-item'>
+                  <a class='nav-link' href='/'>Update Profile</a>
+                </li>
+                <li class='nav-item'>
+                  <a class='nav-link' href='/'>See History</a>
+                </li>
+                <li class='nav-item'>
+                  <a class='nav-link' href='/'>About</a>
+                </li>
+                <li class='nav-item'>
+                  <a class='nav-link' href='/'>References</a>
+                </li>
+                <li class='nav-item'>
+                  <a class='nav-link' href='https://github.com/evanma92/diversityexplorer/'>Github</a>
+                </li>
+                  {% if user.is_authenticated %}
+                <li class='nav-item'>
+                  <a class='nav-link' href="{% url 'logout' %}">Logout</a>
+                </li>
+                  {% else %}
+                <li class='nav-item'>
+                  <a class='nav-link' href="{% url 'login' %}">Login</a>
+                </li>
+                <li class='nav-item'>
+                  <a class='nav-link' href="{% url 'signup' %}">SignUp</a>
+                </li>
+                  {% endif %}
+              </ul>
+              <!--<form class="navbar-form navbar-left" action="navSearchResult.php" name="nav_search" method="POST">   &lt;!&ndash; navbar search added&ndash;&gt;-->
+                <!--<div class="input-group">-->
+                  <!--<input type="text" class="form-control" name="nav_search_input" placeholder="Search for...">-->
+                  <!--<button type="submit" class="btn btn-info navbar-btn" name="search_button">Go!</button>-->
+                <!--</div>-->
+              <!--</form>-->                 <!-- navbar search added-->
+            </div>
+          </div>
+      </div>
+        </nav>
     <main>
+        <div class="container">
       {% block content %}
       {% endblock %}
+        </div>
     </main>
   </body>
 </html>
