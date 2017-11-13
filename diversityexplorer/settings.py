@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'divexplorer',
-    # 'autofixture',
-    # 'django_nose',
-    # 'bootstrap3'
+    'autofixture',
+    'django_nose',
+    'bootstrap3'
 ]
 
 MIDDLEWARE = [
