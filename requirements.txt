@@ -164,7 +164,6 @@ spyder==3.1.4
 SQLAlchemy==1.1.11
 statsmodels==0.8.0
 stevedore==1.27.1
-subprocess32==3.2.7
 sympy==1.0
 tables==3.3.0
 tabulate==0.7.5
