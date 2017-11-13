@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'divexplorer',
     # 'autofixture',
     # 'django_nose',
-    'bootstrap3'
+    # 'bootstrap3'
 ]
 
 MIDDLEWARE = [
