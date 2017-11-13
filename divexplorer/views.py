@@ -15,7 +15,7 @@ from divexplorer.forms import SignUpForm
 """
 
 def index(request):
-    context_dict = {'boldmessage': "Working with Maurice and Michiel on the best capstone ever"}
+    context_dict = {'boldmessage': "Working with Michael, Maurice and Michiel on the best capstone ever"}
 
     return render(request, 'divexplorer/index.html', context=context_dict)
 
